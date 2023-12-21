@@ -1,0 +1,21 @@
+﻿
+<div class="col-md-8 ftco-animate">
+
+	<h2 class="mb-3">Merhaba</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.</p>
+
+	@await Component.InvokeAsync("_BlogDetailCloudTagByBlogComponentPartial")
+
+	@await Component.InvokeAsync("_BlogDetailsAuthorAboutComponentPartial")
+
+
+	<div class="pt-5 mt-5">
+		<h3 class="mb-5">6 Yorum</h3>
+
+		@await Component.InvokeAsync("_CommentListByBlogComponentPartial")
+
+		@await Component.InvokeAsync("_AddCommentComponentPartial")
+
+	</div>
+
+</div>
