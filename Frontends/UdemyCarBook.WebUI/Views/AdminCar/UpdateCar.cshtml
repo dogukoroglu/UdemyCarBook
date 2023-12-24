@@ -1,0 +1,66 @@
+﻿@model UpdateCarDto
+
+@{
+    ViewData["Title"] = "UpdateCar";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+
+						<h4 class="card-title">Araç Güncelleme Sayfası</h4>
+						<p class="card-subtitle mb-4">Bu sayfa üzerinden araç envanterinde eklenmiş araçların kaydını güncelleyebilir ve  detaylarını görebilirsiniz</p>
+
+						<form method="post">
+							<input type="hidden" asp-for="CarID" />
+							<div class="form-group">
+								<label for="exampleInputBrand">Araç Markası</label>
+								@Html.DropDownListFor(x => x.BrandID, (List<SelectListItem>)ViewBag.BrandValues, new { @class = "form-control" })
+							</div>
+							<div class="form-group">
+								<label for="exampleInputModel">Araç Modeli</label>
+								<input type="text" class="form-control" id="exampleInputModel" asp-for="Model" placeholder="Araç Modelini Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputCoverImage">Kapak Fotoğrafı</label>
+								<input type="text" class="form-control" id="exampleInputCoverImage" asp-for="CoverImageUrl" placeholder="Araç Kapak Fotoğraf Linkini Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputKm">KM Bilgisi</label>
+								<input type="text" class="form-control" id="exampleInputKm" asp-for="Km" placeholder="Araç KM Bilgisini Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputTransmission">Vites Türü</label>
+								<input type="text" class="form-control" id="exampleInputTransmission" asp-for="Transmission" placeholder="Araç Vites Türünü Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputSeat">Koltuk Sayısı</label>
+								<input type="number" class="form-control" id="exampleInputSeat" asp-for="Seat" placeholder="Araç Koltuk Sayısını Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputLuggage">Bagaj Sayısı</label>
+								<input type="number" class="form-control" id="exampleInputLuggage" asp-for="Luggage" placeholder="Araç Koltuk Sayısını Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputFuel">Yakıt Türü</label>
+								<input type="text" class="form-control" id="exampleInputFuel" asp-for="Fuel" placeholder="Araç Yakıt Türünü Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputBigImage">Büyük Kapak Fotoğrafı</label>
+								<input type="text" class="form-control" id="exampleInputBigImage" asp-for="BigImageUrl" placeholder="Araç Büyük Fotoğraf Linkini Giriniz">
+							</div>
+							<button type="submit" class="btn btn-primary waves-effect waves-light">Güncelle</button>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
