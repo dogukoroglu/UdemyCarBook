@@ -1,0 +1,32 @@
+﻿@model CreateBrandDto
+@{
+    ViewData["Title"] = "CreateBrand";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+
+						<h4 class="card-title">Yeni Marka Ekleme Sayfası</h4>
+						<p class="card-subtitle mb-4">Bu sayfa üzerinden yeni marka kaydını yapabilir, detaylarını görebilir ve düzenleyebilirsiniz.</p>
+
+						<form method="post">
+							<div class="form-group">
+								<label for="exampleInputFeature">Marka Adı</label>
+								<input type="text" class="form-control" id="exampleInputFeature" asp-for="Name" placeholder="Marka Adını Giriniz">
+							</div>
+							<button type="submit" class="btn btn-primary waves-effect waves-light">Kayıt Et</button>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

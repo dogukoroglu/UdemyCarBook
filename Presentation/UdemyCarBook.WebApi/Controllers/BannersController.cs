@@ -46,7 +46,7 @@ namespace UdemyCarBook.WebApi.Controllers
 			return Ok("Bilgi Eklendi!");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public async Task<IActionResult> RemoveBanner(int id)
 		{
 			await _removeBannerCommandHandler.Handle(new RemoveBannerCommand(id));

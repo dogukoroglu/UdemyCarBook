@@ -1,0 +1,57 @@
+﻿@model List<ResultBannerDto>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Anasayfa Banner Alanı </h4>
+						<p class="card-subtitle mb-4">
+							Anasayfanın banner alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz. Tema bütünlüğünün bozulmaması adına lütfen sadece 1 adet veri girişi yapınız. Aksi durumlarda tema bütünlüğü bozulacaktır!
+						</p>
+						<div class="table-responsive">
+							<table class="table mb-0">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Başlık</th>
+										<th>Açıklama</th>
+										<th>Video Açıklaması</th>
+										<th>Video Url</th>
+										<th>Sil</th>
+										<th>Güncelle</th>
+										<th>YouTube'da Aç</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+										<tr>
+											<th>@item.BannerID</th>
+											<td>@item.Title</td>
+											<td>@item.Description</td>
+											<td>@item.VideoDescription</td>
+											<td>@item.VideoUrl</td>
+											<td><a href="/Admin/AdminBanner/RemoveBanner/@item.BannerID" class="btn btn-outline-danger">Sil</a></td>
+											<td><a href="/Admin/AdminBanner/UpdateBanner/@item.BannerID" class="btn btn-outline-success">Güncelle</a></td>
+											<td><a href="@item.VideoUrl" class="btn btn-outline-success">İzle</a></td>
+										</tr>
+									}
+								</tbody>
+							</table>
+							<a href="/Admin/AdminBanner/CreateBanner/" class="btn btn-outline-primary">Yeni Banner Girişi</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
