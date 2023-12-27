@@ -37,7 +37,7 @@ namespace UdemyCarBook.WebApi.Controllers
 			return Ok("Yazar başarıyla eklendi!");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public async Task<IActionResult> RemoveAuthor(int id)
 		{
 			await _mediator.Send(new RemoveAuthorCommand(id));
