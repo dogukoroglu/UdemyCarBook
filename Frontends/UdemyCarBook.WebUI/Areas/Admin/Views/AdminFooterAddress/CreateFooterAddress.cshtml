@@ -1,0 +1,44 @@
+﻿@model CreateFooterAddressDto
+@{
+    ViewData["Title"] = "CreateFooterAddress";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+
+						<h4 class="card-title">Yeni Adres Bilgisi Ekleme Sayfası</h4>
+						<p class="card-subtitle mb-4">Bu sayfa üzerinden yeni adres bilgisi kaydını yapabilir, detaylarını görebilir ve düzenleyebilirsiniz.</p>
+
+						<form method="post">
+							<div class="form-group">
+								<label for="exampleInputAddress">Adres</label>
+								<input type="text" class="form-control" id="exampleInputAddress" asp-for="Address" placeholder="Adres Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPhone">Telefon</label>
+								<input type="tel" class="form-control" id="exampleInputPhone" asp-for="Phone" placeholder="Telefon Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail">E-Mail</label>
+								<input type="email" class="form-control" id="exampleInputEmail" asp-for="Email" placeholder="E-Mail Giriniz">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputDescription">Açıklama</label>
+								<textarea rows="5" asp-for="Description" placeholder="Açıklama Giriniz" class="form-control"></textarea>
+							</div>
+							<button type="submit" class="btn btn-primary waves-effect waves-light">Kayıt Et</button>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

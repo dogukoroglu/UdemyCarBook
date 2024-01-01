@@ -39,7 +39,7 @@ namespace UdemyCarBook.WebApi.Controllers
 			return Ok("Ödeme Türü başarıyla eklendi!");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public async Task<IActionResult> RemoveService(int id)
 		{
 			await _mediator.Send(new RemoveServiceCommand(id));
