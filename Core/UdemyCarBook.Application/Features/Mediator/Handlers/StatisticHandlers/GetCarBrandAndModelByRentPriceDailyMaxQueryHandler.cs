@@ -20,7 +20,7 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.StatisticHandlers
 
 		public async Task<GetCarBrandAndModelByRentPriceDailyMaxQueryResult> Handle(GetCarBrandAndModelByRentPriceDailyMaxQuery request, CancellationToken cancellationToken)
 		{
-			var value = _repository.GetCarCountByElectric();
+			var value = _repository.GetCarBrandAndModelByRentPriceDailyMax();
 			return new GetCarBrandAndModelByRentPriceDailyMaxQueryResult
 			{
 				CarBrandAndModelByRentPriceDailyMax = value.ToString()
