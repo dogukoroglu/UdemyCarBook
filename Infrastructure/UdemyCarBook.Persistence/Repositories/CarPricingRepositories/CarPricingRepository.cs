@@ -31,7 +31,8 @@ namespace UdemyCarBook.Persistence.Repositories.CarPricingRepositories
 			List<CarPricingViewModel> values = new List<CarPricingViewModel>();
 			using (var command = _context.Database.GetDbConnection().CreateCommand())
 			{
-				command.CommandText = "select * from (select Model,PricingID,Amount from CarPricings inner join Cars on Cars.CarID=CarPricings.CarID) " +
+				command.CommandText = "select * from (select Brands.Name,Model,CoverImageUrl,PricingID,Amount from CarPricings " +
+					"inner join Cars on Cars.CarID=CarPricings.CarID inner join Brands on Brands.BrandID=Cars.BrandID)" +
 					"as SourceTable pivot (sum(Amount) for PricingID in ([3],[4],[5])) as PivotTable;";
 				command.CommandType = System.Data.CommandType.Text;
 				_context.Database.OpenConnection();
@@ -39,19 +40,17 @@ namespace UdemyCarBook.Persistence.Repositories.CarPricingRepositories
 				{
 					while (reader.Read())
 					{
-						CarPricingViewModel carPricingViewModel = new CarPricingViewModel();
-						Enumerable.Range(1, 3).ToList().ForEach(x =>
+						CarPricingViewModel carPricingViewModel = new CarPricingViewModel()
 						{
-							carPricingViewModel.Model = reader[0].ToString();
-							if (DBNull.Value.Equals(reader[x])) // okunan x içinde null değer yerine 0 değeri atar!!
+							Model = reader["Model"].ToString(),
+							CoverImageUrl = reader["CoverImageUrl"].ToString(),
+							Amounts = new List<decimal>
 							{
-								carPricingViewModel.Amounts.Add(0);
+								Convert.ToDecimal(reader[3]),
+								Convert.ToDecimal(reader[4]),
+								Convert.ToDecimal(reader[5])
 							}
-							else
-							{
-								carPricingViewModel.Amounts.Add(reader.GetDecimal(x));
-							}
-						});
+						};
 						values.Add(carPricingViewModel);
 					}
 				}
