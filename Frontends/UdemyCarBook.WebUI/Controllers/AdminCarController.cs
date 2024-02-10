@@ -87,7 +87,7 @@ namespace UdemyCarBook.WebUI.Controllers
 			ViewBag.BrandValues = brandValues;
 
 			var responseMessage2 = await client.GetAsync($"https://localhost:7022/api/Cars/{id}");
-			if(responseMessage2.IsSuccessStatusCode)
+			if (responseMessage2.IsSuccessStatusCode)
 			{
 				var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
 				var values2 = JsonConvert.DeserializeObject<UpdateCarDto>(jsonData2);
@@ -101,9 +101,9 @@ namespace UdemyCarBook.WebUI.Controllers
 		{
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(updateCarDto);
-			StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
+			StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 			var responseMessage = await client.PutAsync("https://localhost:7022/api/Cars/", content);
-			if(responseMessage.IsSuccessStatusCode)
+			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
 			}

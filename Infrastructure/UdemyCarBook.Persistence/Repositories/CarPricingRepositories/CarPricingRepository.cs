@@ -42,13 +42,14 @@ namespace UdemyCarBook.Persistence.Repositories.CarPricingRepositories
 					{
 						CarPricingViewModel carPricingViewModel = new CarPricingViewModel()
 						{
+							BrandName = reader["Name"].ToString(),
 							Model = reader["Model"].ToString(),
 							CoverImageUrl = reader["CoverImageUrl"].ToString(),
 							Amounts = new List<decimal>
 							{
-								Convert.ToDecimal(reader[3]),
-								Convert.ToDecimal(reader[4]),
-								Convert.ToDecimal(reader[5])
+								Convert.ToDecimal(reader["3"]),
+								Convert.ToDecimal(reader["4"]),
+								Convert.ToDecimal(reader["5"])
 							}
 						};
 						values.Add(carPricingViewModel);

@@ -14,7 +14,7 @@ namespace UdemyCarBook.Application.ViewModels
 		}
 		public string Model { get; set; }
 		public List<decimal> Amounts { get; set; }
-		//public string BrandName { get; set; }
+		public string BrandName { get; set; }
 		public string CoverImageUrl { get; set; }
 	}
 }
