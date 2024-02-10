@@ -19,7 +19,6 @@ namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
 		public async Task<IActionResult> Index()
 		{
 			Random random = new Random();
-
 			var client = _httpClientFactory.CreateClient();
 
 			#region İstatistik1
