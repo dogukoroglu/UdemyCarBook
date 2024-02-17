@@ -1,6 +1,6 @@
 # Asp.Net Core Api 8.0 Onion Architecture ile BookCar Projesi
 Bu proje, Murat Yücedağ Hocamızın Udemy üzerinden yayınlamış olduğu Asp.Net Core Api 8.0 Onion Architecture ile BookCar Projesi eğitiminin projesidir. Projede farklı farklı teknolojilere yer verdik. Onion Architecture, 
-MediatR, CQRS gibi.
+MediatR, CQRS gibi. Haberleşme kısmında ise Web Api kullanıldı.
 
 ![defaultindex](https://github.com/dogukoroglu/UdemyCarBook/assets/102040349/c8246610-eabc-414b-be0e-57eea157a80e)
 ![1 1](https://github.com/dogukoroglu/UdemyCarBook/assets/102040349/c83bf958-8b48-4086-8629-9d93983c3568)
