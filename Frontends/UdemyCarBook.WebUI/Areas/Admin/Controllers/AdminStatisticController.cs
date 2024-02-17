@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using UdemyCarBook.Dto.AuthorDtos;
 using UdemyCarBook.Dto.StatisticDtos;
 
 namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
 {
+	[Authorize(Roles = "Admin")]
 	[Area("Admin")]
 	[Route("Admin/AdminStatistic")]
 	public class AdminStatisticController : Controller

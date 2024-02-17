@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
@@ -6,6 +7,7 @@ using UdemyCarBook.Dto.FooterAddressDtos;
 
 namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
 {
+	[Authorize(Roles = "Admin")]
 	[Area("Admin")]
 	[Route("Admin/AdminFooterAddress")]
 	public class AdminFooterAddressController : Controller

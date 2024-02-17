@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 using UdemyCarBook.Dto.BrandDtos;
 
 namespace UdemyCarBook.WebUI.Controllers
 {
+	[Authorize(Roles ="Admin")]
 	public class AdminBrandController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;

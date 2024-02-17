@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 using UdemyCarBook.Dto.ContactDtos;
 
 namespace UdemyCarBook.WebUI.Controllers
 {
+	[AllowAnonymous]
 	public class ContactController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;

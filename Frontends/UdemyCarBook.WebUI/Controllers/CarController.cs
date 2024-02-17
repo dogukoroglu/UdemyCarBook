@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using UdemyCarBook.Dto.CarDtos;
 using UdemyCarBook.Dto.CarPricingDtos;
@@ -6,6 +7,7 @@ using UdemyCarBook.Dto.ServiceDtos;
 
 namespace UdemyCarBook.WebUI.Controllers
 {
+	[AllowAnonymous]
 	public class CarController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;

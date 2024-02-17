@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 using UdemyCarBook.Dto.BlogDtos;
@@ -6,6 +7,7 @@ using UdemyCarBook.Dto.CommentDtos;
 
 namespace UdemyCarBook.WebUI.Controllers
 {
+	[AllowAnonymous]
 	public class BlogController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
